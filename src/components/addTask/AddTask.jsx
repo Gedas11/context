@@ -1,9 +1,9 @@
 import {Form, Button} from "react-bootstrap"
 import { useState } from "react"
-import { useGlobalContext } from "../../context/TasksContent"
+import { useGlobalContext } from "../../context/TasksContext"
 
 const AddTask = () =>{
-    const {addTask} = useGlobalContext
+    const {addTask, closeForm} = useGlobalContext();
     const [newTask, setNewTask] = useState({
        'title':'',
        'desc':''
@@ -18,6 +18,7 @@ const AddTask = () =>{
     const submitHandler = (e) =>{
         e.preventDefault()
         addTask(newTask)
+        closeForm()
     }
     console.log(newTask)
     
@@ -36,9 +37,10 @@ const AddTask = () =>{
            <Form.Group className="mt-2">
                <Form.Control
                 as="textarea"
-                defaultValue={'desc'}
+                value={newTask.desc}
                 onChange={handleChange}
-                defaultValue={'desc'}
+                name="desc"
+                
                />
            </Form.Group>
            <Button type="submit" className="mt-2">

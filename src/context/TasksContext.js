@@ -3,11 +3,15 @@ import React from "react";
 
 const AppContext = React.createContext(); 
 const AppProvider = ({ children }) => {  //tiekejas
-  const [tasks, setTasks] = useState([{
+  const [tasks, setTasks] = useState(
+    [
+      {
       title: "Learn React",
       desc: "it is very important"
-  }]);
-const [ isOpen, setIsOpen] = useState(false)
+  }
+]
+);
+const [isOpen, setIsOpen] = useState(false)
   
 const addTask = (data) => {
     setTasks((prevData) => {
