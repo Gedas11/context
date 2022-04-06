@@ -36,7 +36,7 @@ const addTask = (data) => {
       }}
     >
       {children}
-      {/* sita vieta ziauuuriai svarbi */}
+      
     </AppContext.Provider>
   );
 };

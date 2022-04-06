@@ -12,9 +12,9 @@ const Tasks = () => {
       <div className="m-3 text-center">
         <Button onClick={openForm} className="mx-auto">add tasks</Button>
       </div>
-      {(isOpen) && <AddTask/>}
+      {isOpen && <AddTask/>}
       <ListGroup>
-       {(tasks) && tasks.map((task, i)=> <Tasks
+       {tasks.lenght && tasks.map((task, i)=> <Tasks
        key={i}
        title={task.title}
        desc={task.desc}/>)}
